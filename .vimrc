@@ -1,3 +1,4 @@
+set number
 set autoindent
 set smartindent
 set noexpandtab
