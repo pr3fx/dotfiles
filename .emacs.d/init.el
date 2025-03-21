@@ -8,6 +8,14 @@
 (tool-bar-mode 0)
 (tooltip-mode 0)
 
+;; Set font
+(set-face-attribute 'default nil
+                    :family "Iosevka"
+                    :height 102
+                    :weight 'normal
+                    :width 'normal)
+
+
 ;; Disable annoying bell
 (setq ring-bell-function 'ignore)
 ;; Disable the scroll bars when splitting screen
@@ -15,12 +23,17 @@
 	     '(vertical-scroll-bars . nil))
 
 ;; Set tab width to 4
-(setq c-default-style "linux")
-(setq-default indent-tabs-mode nil
-			  c-basic-offset 4
-			  tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-default-style "linux") 
+(setq c-basic-offset 4) 
+(c-set-offset 'comment-intro 0)
+;; Stupidly, need to set indentation behaviour for c treesitter explicitly
+(setq-default c-ts-mode-indent-style "k&r"
+		      c-ts-mode-indent-offset 4)
 
-(load-theme 'tango-dark t)
+;; Editory theme
+(load-theme 'modus-vivendi t)
 
 ;; Don't freeze emacs with ctrl-z
 (global-unset-key (kbd "C-z"))
@@ -45,6 +58,7 @@
 ;; tree-sitter
 (setq treesit-language-source-alist
       '((c "https://github.com/tree-sitter/tree-sitter-c")
+        (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
         (cmake "https://github.com/uyha/tree-sitter-cmake")
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (python "https://github.com/tree-sitter/tree-sitter-python")
@@ -77,12 +91,6 @@
   ;;:custom 
   ;;(magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1) ; Don't open new window when viewing diff
   )
-
-;; Better completion
-(use-package ivy
-  :diminish ivy-mode
-  :config
-  (ivy-mode 1))
 
 ;; Full shell
 (use-package vterm
