@@ -15,6 +15,8 @@
                     :weight 'normal
                     :width 'normal)
 
+;; Inline code completion
+;;(global-completion-preview-mode)
 
 ;; Disable annoying bell
 (setq ring-bell-function 'ignore)
@@ -32,6 +34,15 @@
 (setq-default c-ts-mode-indent-style "k&r"
 		      c-ts-mode-indent-offset 4)
 
+;; set IDO mode
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+
+;; KEY REMAPS
+(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-i") 'imenu)
+
 ;; Editory theme
 (load-theme 'modus-vivendi t)
 
@@ -44,9 +55,6 @@
 
 ;; View column number of cursor position
 (setq column-number-mode t)
-
-;; Auto-insert pairs
-;; (electric-pair-mode 1)
 
 ;; Line numbers
 (setq display-line-numbers-type 'relative)
