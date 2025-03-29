@@ -42,6 +42,16 @@
 ;; KEY REMAPS
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-i") 'imenu)
+(global-set-key (kbd "C-v") ;; keep cursor centred when scrolling up
+                (lambda ()
+                  (interactive)
+                  (scroll-up-command)
+                  (recenter)))
+(global-set-key (kbd "M-v") ;; keep cursor centred when scrolling down
+                (lambda ()
+                  (interactive)
+                  (scroll-down-command)
+                  (recenter)))
 
 ;; Editory theme
 (load-theme 'modus-vivendi t)
@@ -53,7 +63,7 @@
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
-;; View column number of cursor position
+;; view column number of cursor position
 (setq column-number-mode t)
 
 ;; Line numbers
