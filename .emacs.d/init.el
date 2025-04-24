@@ -34,6 +34,9 @@
 (setq-default c-ts-mode-indent-style "k&r"
 		      c-ts-mode-indent-offset 4)
 
+;; Always follow symlinks
+(setq vc-follow-symlinks t)
+
 ;; set IDO mode
 (ido-mode 1)
 (setq ido-everywhere t)
