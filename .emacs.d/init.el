@@ -54,7 +54,7 @@
                   (recenter)))
 
 ;; Editory theme
-(load-theme 'modus-vivendi t)
+(load-theme 'retro-slab t)
 
 ;; Don't freeze emacs with ctrl-z
 (global-unset-key (kbd "C-z"))
