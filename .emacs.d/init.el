@@ -22,7 +22,10 @@
 (setq ring-bell-function 'ignore)
 ;; Disable the scroll bars when splitting screen
 (add-to-list 'default-frame-alist
-	     '(vertical-scroll-bars . nil))
+	         '(vertical-scroll-bars . nil))
+
+;; disable cursor blinking
+(setq blink-cursor-mode nil)
 
 ;; Set tab width to 4
 (setq-default indent-tabs-mode nil)
@@ -72,8 +75,7 @@
 ;; Line numbers
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
-(dolist (mode '(org-mode-hook
-		vterm-mode-hook))
+(dolist (mode '(org-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0)))) ;; Disable line numbers in some buffers
 
 ;; tree-sitter
@@ -112,10 +114,6 @@
   ;;:custom 
   ;;(magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1) ; Don't open new window when viewing diff
   )
-
-;; Full shell
-(use-package vterm
-  :ensure t)
 
 ;; Show available key-chords
 (use-package which-key
