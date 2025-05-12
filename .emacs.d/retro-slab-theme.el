@@ -7,6 +7,8 @@
 (let ((class '((class color) (min-colors 89)))
    ;;; Zenburn palette reversed
    ;;; colors with -x are lighter, colors with +x are darker
+      (rslab-lumogreen "#39FF14")
+      (rslab-blue "#0000AA")
       (azenburn-fg+1 "#000010")
       (azenburn-fg "#232333")
       (azenburn-fg-1 "#9a9aaa")
@@ -60,7 +62,8 @@
 
    ;;; basic coloring
    `(default ((t (:foreground ,azenburn-fg :background ,azenburn-bg))))
-   `(cursor ((t (:foreground , azenburn-fg :background ,azenburn-fg+1))))
+   `(cursor ((t (:foreground , azenburn-fg+1 :background ,"medium blue"))))
+   `(line-number-current-line ((t (:foreground ,"medium blue"))))
    `(escape-glyph ((t (:foreground ,azenburn-dark-blue :weight bold))))
    `(widget-field ((t (:foreground ,azenburn-fg :background ,azenburn-bg+3))))
    `(fringe ((t (:foreground ,azenburn-fg :background ,azenburn-bg+1))))
@@ -131,7 +134,7 @@
      ((t (:foreground ,azenburn-violet-2
                       :background ,azenburn-bg-05
                       :box (:line-width -1 :style released-button)))))
-   `(region ((,class (:background ,azenburn-bg-1))
+   `(region ((,class (:background ,"plum"))
              (t (:inverse-video t))))
    `(secondary-selection ((t (:background ,azenburn-bg+2))))
    `(trailing-whitespace ((t (:background ,azenburn-blue))))
@@ -359,12 +362,12 @@
    `(debbugs-gnu-tagged ((t (:foreground ,azenburn-blue))))
 
 ;;; diff
-   `(diff-added          ((t (:background ,azenburn-violet-5 :foreground ,azenburn-violet+2))))
+   `(diff-added        ((t (:background ,azenburn-blue-6 :foreground ,azenburn-blue+1))))
    `(diff-changed        ((t (:background "#aaaaee" :foreground ,azenburn-dark-blue-1))))
-   `(diff-removed        ((t (:background ,azenburn-blue-6 :foreground ,azenburn-blue+1))))
-   `(diff-refine-added   ((t (:background ,azenburn-violet-4 :foreground ,azenburn-violet+3))))
+   `(diff-removed          ((t (:background ,azenburn-violet-5 :foreground ,azenburn-violet+2))))
+   `(diff-refine-added ((t (:background ,azenburn-blue-5 :foreground ,azenburn-blue+2))))
    `(diff-refine-changed  ((t (:background "#7777ee" :foreground ,azenburn-dark-blue))))
-   `(diff-refine-removed ((t (:background ,azenburn-blue-5 :foreground ,azenburn-blue+2))))
+   `(diff-refine-removed   ((t (:background ,azenburn-violet-4 :foreground ,azenburn-violet+3))))
    `(diff-header ((,class (:background ,azenburn-bg+2))
                   (t (:background ,azenburn-fg :foreground ,azenburn-bg))))
    `(diff-file-header
