@@ -711,7 +711,7 @@
    `(ansi-color-names-vector [,azenburn-bg ,azenburn-blue ,azenburn-violet
                                            ,azenburn-dark-blue ,azenburn-beige
                                            ,azenburn-green ,azenburn-bordeaux
-                                           ,azenburn-fg])
+                                           ,azenburn-fg]))
 ;;; fill-column-indicator
    `(fci-rule-color ,azenburn-bg-05)
 
