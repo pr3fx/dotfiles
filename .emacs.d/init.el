@@ -27,15 +27,16 @@
 ;; disable cursor blinking
 (setq blink-cursor-mode nil)
 
+;; disable line wrapping
+(setq-default truncate-lines t)
+(setq-default truncate-partial-width-windows nil)
+
 ;; Set tab width to 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq c-default-style "linux") 
 (setq c-basic-offset 4) 
 (c-set-offset 'comment-intro 0)
-;; Stupidly, need to set indentation behaviour for c treesitter explicitly
-(setq-default c-ts-mode-indent-style "k&r"
-		      c-ts-mode-indent-offset 4)
 
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
@@ -86,11 +87,16 @@
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (python "https://github.com/tree-sitter/tree-sitter-python")
         (json "https://github.com/tree-sitter/tree-sitter-json")))
+
 ;; mask major modes to use treesitter instead
-(setq major-mode-remap-alist
-      '((c-mode . c-ts-mode)
-        (python-mode . python-ts-mode)
-        (json-mode . json-ts-mode)))
+(add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
+(add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
+(add-to-list 'major-mode-remap-alist
+             '(c-or-c++-mode . c-or-c++-ts-mode))
+
+;; Set indentation behaviour for C
+(setq-default c-ts-mode-indent-offset 4)
+(c-ts-mode-set-global-style 'k&r)
 
 ;; Package management
 (require 'package)
