@@ -94,9 +94,9 @@
 (add-to-list 'major-mode-remap-alist
              '(c-or-c++-mode . c-or-c++-ts-mode))
 
-;; Set indentation behaviour for C
-(setq-default c-ts-mode-indent-offset 4)
-(c-ts-mode-set-global-style 'k&r)
+(add-hook 'c-ts-mode-hook (lambda ()
+                            (setq-default c-ts-mode-indent-offset 4)
+                            (c-ts-mode-set-global-style 'k&r)))
 
 ;; Package management
 (require 'package)
