@@ -60,8 +60,8 @@
                   (scroll-down-command)
                   (recenter)))
 
-;; Editory theme
-(load-theme 'retro-slab t)
+;; Editor theme
+;;(load-theme 'retro-slab t)
 
 ;; Don't freeze emacs with ctrl-z
 (global-unset-key (kbd "C-z"))
@@ -112,6 +112,11 @@
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t) ;; If not installed, install them automatically
+
+;; Gruber darker theme
+(use-package gruber-darker-theme)
+(load-theme 'gruber-darker t)
+
 ;; Install the diminish package to not show the modes for each active package on the modeline
 (use-package diminish)
 
