@@ -98,6 +98,7 @@
 ;; Golang
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-to-list 'auto-mode-alist '("/go\\.mod\\'" . go-mod-ts-mode))
+(setq go-ts-mode-indent-offset 4)
 
 (add-hook 'c-ts-mode-hook (lambda ()
                             (setq-default c-ts-mode-indent-offset 4)
