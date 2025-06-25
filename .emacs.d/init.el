@@ -86,6 +86,8 @@
         (cmake "https://github.com/uyha/tree-sitter-cmake")
         (elisp "https://github.com/Wilfred/tree-sitter-elisp")
         (python "https://github.com/tree-sitter/tree-sitter-python")
+        (go "https://github.com/tree-sitter/tree-sitter-go")
+        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
         (json "https://github.com/tree-sitter/tree-sitter-json")))
 
 ;; mask major modes to use treesitter instead
@@ -93,6 +95,9 @@
 (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
 (add-to-list 'major-mode-remap-alist
              '(c-or-c++-mode . c-or-c++-ts-mode))
+;; Golang
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("/go\\.mod\\'" . go-mod-ts-mode))
 
 (add-hook 'c-ts-mode-hook (lambda ()
                             (setq-default c-ts-mode-indent-offset 4)
