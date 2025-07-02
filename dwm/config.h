@@ -47,9 +47,9 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -81,21 +81,21 @@ static const Key keys[] = {
  	{ MODKEY,               58,     setlayout,      {.v = &layouts[2]} }, // m
  	{ MODKEY,               65,     setlayout,      {0} },          // space
  	{ MODKEY|ShiftMask,     65,     togglefloating, {0} },          // space
- 	{ MODKEY,               19,     view,           {.ui = ~0 } },  // 0
- 	{ MODKEY|ShiftMask,     19,     tag,            {.ui = ~0 } },  // 0
+ 	{ MODKEY,               16,     view,           {.ui = ~0 } },  // 0
+ 	{ MODKEY|ShiftMask,     16,     tag,            {.ui = ~0 } },  // 0
  	{ MODKEY,               25,     focusmon,       {.i = -1 } },   // comma
  	{ MODKEY,               26,     focusmon,       {.i = +1 } },   // period
  	{ MODKEY|ShiftMask,     25,     tagmon,         {.i = -1 } },   // comma
  	{ MODKEY|ShiftMask,     26,     tagmon,         {.i = +1 } },   // period
- 	TAGKEYS(                10,                     0)              // 1
- 	TAGKEYS(                11,                     1)              // 2
- 	TAGKEYS(                12,                     2)              // 3
- 	TAGKEYS(                13,                     3)              // 4
- 	TAGKEYS(                14,                     4)              // 5
- 	TAGKEYS(                15,                     5)              // 6
- 	TAGKEYS(                16,                     6)              // 7
- 	TAGKEYS(                17,                     7)              // 8
-	TAGKEYS(                18,                     8)              // 9
+ 	TAGKEYS(                14,                     0)              // 1
+ 	TAGKEYS(                17,                     1)              // 2
+ 	TAGKEYS(                13,                     2)              // 3
+ 	TAGKEYS(                18,                     3)              // 4
+ 	TAGKEYS(                12,                     4)              // 5
+ 	TAGKEYS(                19,                     5)              // 6
+ 	TAGKEYS(                11,                     6)              // 7
+ 	TAGKEYS(                20,                     7)              // 8
+	TAGKEYS(                15,                     8)              // 9
 	{ MODKEY|ShiftMask,     24,     quit,           {0} },          // q
 };
 
