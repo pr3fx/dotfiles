@@ -119,9 +119,7 @@
 (require 'use-package)
 (setq use-package-always-ensure t) ;; If not installed, install them automatically
 
-;; Gruber darker theme
-(use-package gruber-darker-theme)
-(load-theme 'gruber-darker t)
+(load-theme 'modus-vivendi-tinted t)
 
 ;; Install the diminish package to not show the modes for each active package on the modeline
 (use-package diminish)
