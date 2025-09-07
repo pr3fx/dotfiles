@@ -126,6 +126,20 @@
   :config
   (load-theme 'the-matrix t))
 
+;; Beacon to never lose the cursor again
+(use-package beacon
+  :config
+  (setq beacon-color "00e57a")
+  (setq beacon-size 50)
+  (beacon-mode 1))
+
+;; Project management
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map)))
 
 ;; Install the diminish package to not show the modes for each active package on the modeline
 (use-package diminish)
