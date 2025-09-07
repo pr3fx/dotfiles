@@ -148,6 +148,8 @@
   :config
   (setq beacon-color "#00e57a")
   (setq beacon-size 50)
+  (setq beacon-blink-duration 0.2)
+  (setq beacon-blink-delay 0.2)
   (beacon-mode 1))
 
 ;; Project management
