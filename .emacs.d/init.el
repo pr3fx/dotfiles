@@ -60,9 +60,6 @@
                   (scroll-down-command)
                   (recenter)))
 
-;; Editor theme
-;;(load-theme 'retro-slab t)
-
 ;; Don't freeze emacs with ctrl-z
 (global-unset-key (kbd "C-z"))
 
@@ -124,7 +121,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t) ;; If not installed, install them automatically
 
-(load-theme 'modus-vivendi-tinted t)
+;; Editor theme
+(use-package the-matrix-theme
+  :config
+  (load-theme 'the-matrix t))
+
 
 ;; Install the diminish package to not show the modes for each active package on the modeline
 (use-package diminish)
