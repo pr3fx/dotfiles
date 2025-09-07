@@ -79,6 +79,11 @@
 (dolist (mode '(org-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0)))) ;; Disable line numbers in some buffers
 
+;; Trim trailing whitespace when saving a file
+(add-hook 'before-save-hook
+          (lambda ()
+            (delete-trailing-whitespace)))
+
 ;; tree-sitter
 (setq treesit-language-source-alist
       '((c "https://github.com/tree-sitter/tree-sitter-c")
