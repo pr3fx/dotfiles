@@ -90,13 +90,30 @@
         (python "https://github.com/tree-sitter/tree-sitter-python")
         (go "https://github.com/tree-sitter/tree-sitter-go")
         (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
-        (json "https://github.com/tree-sitter/tree-sitter-json")))
+        (json "https://github.com/tree-sitter/tree-sitter-json")
+        (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "tsx/src"))
+        (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.20.3" "typescript/src"))
+        (yaml . ("https://github.com/ikatyang/tree-sitter-yaml" "v0.5.0"))
+        (prisma "https://github.com/victorhqc/tree-sitter-prisma")))
 
 ;; mask major modes to use treesitter instead
 (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
 (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
 (add-to-list 'major-mode-remap-alist
              '(c-or-c++-mode . c-or-c++-ts-mode))
+;; JSON and Typescript
+(add-to-list 'major-mode-remap-alist '(js-json-mode . json-ts-mode))
+(add-to-list 'major-mode-remap-alist '(json-mode . json-ts-mode))
+(add-to-list 'major-mode-remap-alist '(typescript-mode . typescript-ts-mode))
+(add-to-list 'major-mode-remap-alist '(js-mode . typescript-ts-mode))
+(add-to-list 'major-mode-remap-alist '(js2-mode . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . tsx-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cjs\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.mts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.prisma\\'" . prisma-ts-mode))
 ;; Golang
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-to-list 'auto-mode-alist '("/go\\.mod\\'" . go-mod-ts-mode))
