@@ -146,7 +146,7 @@
 ;; Beacon to never lose the cursor again
 (use-package beacon
   :config
-  (setq beacon-color "00e57a")
+  (setq beacon-color "#00e57a")
   (setq beacon-size 50)
   (beacon-mode 1))
 
