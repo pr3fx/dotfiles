@@ -34,8 +34,8 @@
 ;; Set tab width to 4
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-(setq c-default-style "linux") 
-(setq c-basic-offset 4) 
+(setq c-default-style "linux")
+(setq c-basic-offset 4)
 (c-set-offset 'comment-intro 0)
 
 ;; Always follow symlinks
@@ -163,7 +163,7 @@
 
 ;; For managing git repositories
 (use-package magit
-  ;;:custom 
+  ;;:custom
   ;;(magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1) ; Don't open new window when viewing diff
   )
 
