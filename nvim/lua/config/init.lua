@@ -1,4 +1,3 @@
 require("config.lazy")
+require("config.settings")
 require("config.remap")
-vim.o.termguicolors = true
-print("hello from config")
