@@ -12,14 +12,19 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_green[]       = "#00e57a";
+static const char col_green[]       = "#095859";
 static const char col_blue[]        = "#0081c7";
 static const char col_red[]         = "#cc0037";
 static const char col_black[]       = "#000000";
+static const char col_polar_night[] = "#2E3440";
+static const char col_snow_storm_0[]= "#D8DEE9";
+static const char col_snow_storm_1[]= "#ECEFF4";
+static const char col_frost[]       = "#5E81AC";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_green, col_black, col_black },
-	[SchemeSel]  = { col_black, col_green,  col_blue  },
+	[SchemeNorm] = { col_snow_storm_0, col_polar_night, col_polar_night },
+	[SchemeSel]  = { col_snow_storm_1, col_frost,  col_blue  },
 };
 
 /* tagging */
@@ -62,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_green, "-sb", col_green, "-sf", col_black, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_polar_night, "-nf", col_snow_storm_0, "-sb", col_frost, "-sf", col_snow_storm_1, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
 static const Key keys[] = {
