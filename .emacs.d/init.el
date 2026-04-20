@@ -65,7 +65,7 @@
 (setq ring-bell-function 'ignore) ;; Disable annoying bell
 
 ;; Set tab width to 4
-(setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq c-default-style "linux")
 (setq c-basic-offset 4)
@@ -149,6 +149,9 @@
 (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
 (add-to-list 'major-mode-remap-alist
              '(c-or-c++-mode . c-or-c++-ts-mode))
+;; C and CPP
+(add-to-list 'auto-mode-alist '("\\.c\\'" . c-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp\\'" . c-ts-mode))
 ;; JSON and Typescript
 (add-to-list 'major-mode-remap-alist '(js-json-mode . json-ts-mode))
 (add-to-list 'major-mode-remap-alist '(json-mode . json-ts-mode))
