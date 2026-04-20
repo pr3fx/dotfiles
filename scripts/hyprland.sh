@@ -1,2 +1,2 @@
 #!/bin/bash
-hyprland-start
+start-hyprland
