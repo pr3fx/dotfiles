@@ -56,8 +56,10 @@
   (add-hook mode (lambda () (display-line-numbers-mode 0)))) ;; Disable line numbers in some buffers
 
 ;; Set theme
-(use-package nord-theme
-  :config (load-theme 'nord t))
+(use-package tokyo-night
+  :config (load-theme 'tokyo-night-moon t))
+(use-package nord-theme)
+  ;:config (load-theme 'nord t))
 
 ;; ------------------
 ;; Behaviour
@@ -246,6 +248,9 @@
 
 ;; Org-mode
 (use-package org)
+
+(add-to-list 'load-path "/home/operator/extern_repos/vui/")
+(require 'vui)
 
 ;; Load the custom-set-variables file
 (load-file custom-file)
