@@ -29,6 +29,7 @@
 (tooltip-mode 0)
 (setq column-number-mode t) ;; view column number of cursor position
 (show-paren-mode 1) ;; highlight matching parenthesis
+(setq split-width-threshold 180)  ;; split into max 2 for higher res monitors
 
 ;; Set font
 (set-face-attribute 'default nil
