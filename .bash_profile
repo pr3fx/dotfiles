@@ -6,6 +6,14 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export PATH=$PATH:$HOME/.local/bin/:$HOME/Vivado/2025.2/Vivado/bin/
+# Increase history size to unlimited
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
+export HISTCONTROL=ignoreboth  # Ignore duplicates
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"  # Immediately save history
+
+shopt -s histappend  # Don't overwrite history when other terminals are active
 
 if [ -f "$HOME/.config/user-dirs.dirs" ]; then
     . "$HOME/.config/user-dirs.dirs"
