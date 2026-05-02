@@ -5,7 +5,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-export PATH=$PATH:/home/operator/.local/bin/
+export PATH=$PATH:$HOME/.local/bin/:$HOME/Vivado/2025.2/Vivado/bin/
 
 if [ -f "$HOME/.config/user-dirs.dirs" ]; then
     . "$HOME/.config/user-dirs.dirs"
