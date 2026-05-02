@@ -26,5 +26,5 @@ if [ -f "$HOME/.config/user-dirs.dirs" ]; then
 fi
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-	exec $HOME/scripts/hyprland.sh
+    exec hyprland.sh
 fi
