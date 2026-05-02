@@ -252,8 +252,5 @@
 ;; Org-mode
 (use-package org)
 
-(add-to-list 'load-path "/home/operator/extern_repos/vui/")
-(require 'vui)
-
 ;; Load the custom-set-variables file
 (load-file custom-file)
