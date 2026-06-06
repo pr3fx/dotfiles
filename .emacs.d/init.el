@@ -131,6 +131,15 @@
 (setq dired-recursive-deletes 'top)  ;; allow recursive deletes (ask)
 
 ;; ------------------
+;; Language Settings
+;; ------------------
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq c-basic-offset 4)
+            (setq indent-tabs-mode nil)
+            (c-set-style "java")))
+
+;; ------------------
 ;; Tree Sitter
 ;; ------------------
 (setq treesit-language-source-alist
