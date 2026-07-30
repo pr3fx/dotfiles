@@ -20,7 +20,7 @@ config.initial_cols = 120
 config.initial_rows = 28
 
 -- Fonts
-config.font_size = 11
+config.font_size = 10
 config.font = wezterm.font 'Iosevka'
 config.freetype_load_target = 'HorizontalLcd'
 config.font_shaper = 'Harfbuzz'
