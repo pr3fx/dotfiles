@@ -24,9 +24,13 @@ config.font_size = 11
 config.font = wezterm.font 'Iosevka'
 config.freetype_load_target = 'HorizontalLcd'
 config.font_shaper = 'Harfbuzz'
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- GUI
-config.color_scheme = 'Tokyo Night Moon'
+config.color_scheme = ''
+config.colors = {
+  background = '#1c1c1c',
+}
 
 -- Finally, return the configuration to wezterm:
 return config
