@@ -27,7 +27,6 @@ config.font_shaper = 'Harfbuzz'
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- GUI
-config.color_scheme = ''
 config.colors = {
   background = '#1c1c1c',
 }
